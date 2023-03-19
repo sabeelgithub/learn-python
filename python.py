@@ -922,6 +922,43 @@ f.close()
 # file handling end
 
 
+# about meta class attributes
+
+class MyClass:
+    class Meta:
+        pass
+
+print(MyClass.Meta.__name__)
+
+class BaseClass:
+    pass
+
+class MyClass(BaseClass):
+    class Meta:
+        pass
+
+top = MyClass.Meta.__bases__
+for i in top:
+    print(i.__name__)
+print(MyClass.Meta.__bases__)
+
+class MyClass:
+    class Meta:
+        my_attribute = 'Hello, world!'
+
+print(MyClass.Meta.__dict__)
+
+class MyClass:
+    class Meta:
+        pass
+
+print(MyClass.Meta.__module__)
+
+
+
+# end meta class attributes
+
+
 
 
 
