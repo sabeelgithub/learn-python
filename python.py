@@ -1,4 +1,4 @@
-# zip function
+ # zip function
 a = ("John", "Charles", "Mike")
 b = ("Jenny", "Christy", "Monica", "Vicky")
 
@@ -195,6 +195,18 @@ print(againNew)
 molu = ['lo','koi','hm']
 molu[1:2] = ['ann','konn']
 print(molu)
+
+
+# isinstance()
+my_list = ['apple', 123, 'orange', 3.14, True, 'banana', 'grape']
+my_list = [item for item in my_list if not isinstance(item, str)]
+print(my_list)
+# isinstance() end
+
+# index() : it returns the index number specified value
+list1 = [1,2,3,4,5,6,'one']
+print(list1.index('one'))
+
 # end
 
 
