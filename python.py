@@ -207,6 +207,11 @@ print(my_list)
 list1 = [1,2,3,4,5,6,'one']
 print(list1.index('one'))
 
+# count() and sum()
+listm = [1,1,2,3,4]
+print(listm.count(1))
+print(sum(listm))
+
 # end
 
 
