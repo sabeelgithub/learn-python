@@ -311,6 +311,65 @@ pinnim = {
 print(pinnim)
 # end
 
+# convertions built-in data structure using list(),tuple(),set(),dict() methods
+
+list1 = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'] 
+# converting list in to tuple
+converting_list = tuple(list1) 
+print(converting_list) 
+
+# converting list in to set
+newSet = set(list1)
+print(newSet)
+
+# converting tuple in to list
+newList = list(converting_list)
+print(newList)
+
+# converting tuple in to set
+newset1 = set(converting_list)
+print(newset1)
+
+# converting set in to list
+newList1 = list(newset1)
+print(newList1)
+
+# convering set in to tuple
+newTuple1 = tuple(newset1)
+print(newTuple1)
+
+
+dict1 = {'one':1,'two':2,'three':'3'}
+# converting dict in list
+listDict = list(dict1)
+print(listDict)
+
+# converting dict in to tuple
+tupleDict = tuple(dict1)
+print(tupleDict)
+
+# coverting dict in set
+setDict = set(dict1)
+print(setDict)
+
+
+
+
+# end convertions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # join method
 
 myList = ["John", "Peter", "Vicky"]
@@ -974,6 +1033,73 @@ print(MyClass.Meta.__module__)
 
 
 # end meta class attributes
+
+
+
+# random module  and its methods in python = for generating random numbers
+import random
+
+# random() - provide a floating point between 0-1,inclusive of zero and exclusive of 1
+a = random.random()
+print(a)
+
+# randint(a,b) - return random integer in which both a and b is included
+b = random.randint(1,100)
+print(b)
+
+# uniform(a,b) - return random float in which a included and b excluded
+c = random.uniform(-10,-1)
+d = random.uniform(100,200)
+print(c)
+print(d)
+
+# choice() - it will return a random number from our input/list ,tuple,integer are support
+e = random.choice([1,2,3,4,5])
+print(e)
+
+f = random.choice('helllooooo')
+print(f)
+
+# shuffle() - it will suffle our items
+l = [1,2,3,4,5]
+random.shuffle(l)
+print(l)
+
+from array import *
+l = array('i',[1,2,3,4,5])
+random.shuffle(l)
+print(l)
+# random module and method end
+
+
+# finding sum of n numbers
+
+def sumAll(n):
+    print(sum(range(1,n+1)))
+    return
+
+sumAll(10)
+
+# end
+
+# creating dictionary using list comprehension
+
+dictt = {i:i+2 for i in range(1,11)}
+print(dictt) 
+
+# end
+
+
+# Creating a string  
+sequence = 'abjucujba'  
+# Reversing the string  
+reverse = sequence[::-1]  
+  
+# Checking if the string is a palindrome  
+if reverse == sequence:  
+    print("The sequence is a palindrome")  
+else:  
+    print("The sequence is not a palindrome")
 
 
 
