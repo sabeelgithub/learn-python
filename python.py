@@ -1,4 +1,12 @@
- # zip function
+# converting an element in list to strings
+
+list1 = [1,2,3,4,5]
+list1 = [str(i) for i in list1]
+print(list1)
+
+# end
+
+# zip function
 a = ("John", "Charles", "Mike")
 b = ("Jenny", "Christy", "Monica", "Vicky")
 
