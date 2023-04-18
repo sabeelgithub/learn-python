@@ -1,3 +1,13 @@
+# total of list
+l = [1,2,3,4,5,6,7]
+print(sum(l))
+
+# max value of list
+
+l = [1,2,3,4,5,6,7]
+print(max(l))
+
+# end
 # converting an element in list to strings
 
 list1 = [1,2,3,4,5]
