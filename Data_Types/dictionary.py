@@ -35,5 +35,36 @@ print(tupleDict)
 setDict = set(dict1)
 print(setDict)
 
+nestedDict = {
+    'child1':{
+    'name':'muhammed',
+    'age':2
+    },
+    'child2':{
+    'name':'fathima',
+    'age':4
+    }
+
+}
+print(nestedDict)
+
+
+
+
+child1={
+    'name':'anshu',
+    'age':20
+}
+child2 = {
+    'name':'sebi',
+    'age':22
+}
+pinnim = {
+    'child1':child1,
+    'child2':child2,
+    
+}
+print(pinnim)
+
 
 ################# END #########################
