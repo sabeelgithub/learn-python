@@ -1,4 +1,4 @@
-# duck typing 
+ # duck typing 
 
 class VScode:
     def exicute(self):
