@@ -1,6 +1,8 @@
 ################## FROZEN SET #############
+# Actually frozenset is immutable version of set
 
-
+# frozenset()
+# frozenset can be created using frozenset constructor
 thisSet = {'a','e','i','o','u'} 
 frozenSet = frozenset(thisSet)
 print(frozenSet)
@@ -21,7 +23,6 @@ thisString = 'anshida'
 frozenSet4 = frozenset(thisString)
 print(frozenSet4)
 
-
 unionFrozen = frozenSet.union(frozenSet4)
 print(unionFrozen)
 
@@ -30,8 +31,6 @@ print(interFrozen)
 
 symFrozen = frozenSet.symmetric_difference(frozenSet4)
 print(symFrozen)
-
-
 
 
 ################## END ####################
