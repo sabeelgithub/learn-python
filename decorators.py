@@ -27,4 +27,21 @@ def sub(c,d):
 
 sub(1,2)
 
+import time
+
+def time_calculataion(func):
+    def wrapper(*args,**kwargs):
+        star_time = time.time()
+        result = func(*args,**kwargs)
+        end_time = time.time()
+        print(f"Time taken by {func.__name__} is {end_time - star_time}")
+        return result
+    return wrapper
+@time_calculataion
+def sleep_check():
+    time.sleep(5)
+    return "Function Completed"
+
+sleep_check()
+
 ########### end ################
