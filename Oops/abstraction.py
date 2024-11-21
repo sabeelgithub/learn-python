@@ -1,6 +1,4 @@
 
-
-
 ########################### ABSTRACTION ##############################
 from abc import ABC, abstractmethod
 
@@ -16,36 +14,37 @@ class Shape(ABC):
 
 
 class Rectangle(Shape):
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
-
+    def __init__(self,lenght,height):
+        self.length = lenght
+        self.hieght = height
+    
     def area(self):
-        return self.length * self.width
-
+        return print(f"Area of Rectangle is : {self.length * self.hieght}")
+    
     def perimeter(self):
-        return 2 * (self.length + self.width)
-
+        return print(f"Perimeter of Rectangle is : {2 * self.length * self.hieght}")
+    
 
 class Circle(Shape):
-    def __init__(self, radius):
+    def __init__(self,radius):
         self.radius = radius
+        super().__init__()
 
     def area(self):
-        return 3.14 * self.radius ** 2
-
+        return print(f"Area of Circle is : {3.14 * self.radius * self.radius}")
+    
     def perimeter(self):
-        return 2 * 3.14 * self.radius
+        return print(f"Perimeter of Circle is : {2 * 3.14 * self.radius}")
+    
+    
 
+r = Rectangle(2,2)
+r.area()
+r.perimeter()
 
-# Creating instances of Rectangle and Circle
-rectangle = Rectangle(5, 3)
-circle = Circle(7)
-
-# Calling abstract methods through the objects
-print("Rectangle Area:", rectangle.area())
-print("Rectangle Perimeter:", rectangle.perimeter())
-print("Circle Area:", circle.area())
-print("Circle Perimeter:", circle.perimeter())
+c = Circle(4)
+c.area()
+c.perimeter()
+c.test()
 
 ########################### END ABSTRACTION ##############################
