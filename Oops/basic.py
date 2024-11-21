@@ -1,84 +1,105 @@
-class computer:
-    relation = 'love'
+# simple implementation
+
+class TestClass:
+    def welcome(self):
+        print("welcome to test class")
+
+
+test1 = TestClass()
+test1.welcome()
+TestClass.welcome(test1)
+
+# end simple implementation
+
+# types of variables
+
+class Love:
+    relationship_status = "Married" # class variable
+
     def __init__(self,name,age):
+        self.name = name   # instance variable
+        self.age = age     # instance variable
+
+    highlight = "Love" # class variable
+    
+
+wife = Love("Anshida",22)
+husbend = Love("Sabeel",23)
+print(wife.name,wife.age,wife.relationship_status,wife.highlight)
+print(husbend.name,husbend.age,husbend.relationship_status,husbend.highlight)
+print(Love.relationship_status,Love.highlight)
+
+# end types of variable
+
+# types of methods
+
+class Student:
+    school = "HIOHSS Olavattur"
+    def __init__(self,name,mark1,mark2,mark3):
         self.name = name
-        self.age = age
-    
-    def compare(self,other):
-        if self.age == other.age:
-            print('they are same')
-        else:
-            print('they are different')
+        self.biology = mark1
+        self.maths = mark2
+        self.physics = mark3
 
-com1 = computer('sabeel',22)
-com2 = computer('anshida',20)
-com2.age = 21
-com1.compare(com2)
-computer.relation = 'partners'
-print(com1.name,com1.age,com1.relation)
-print(com2.name,com2.age,com2.relation)
+    def average_mark(self):
+        average = (self.biology + self.maths + self.physics)/3
+        print(f"Average Mark of {self.name} is : {average}")
 
-# types methods
-class Students:
-    college = 'Govt arts and science college kondotty'
-    def __init__(self,m1,m2,m3):
-        self.maths = m1
-        self.bio = m2
-        self.chem = m3
-    
-    def avg(self):
-        print(f'average is {(self.maths+self.bio+self.chem)/3}')
-        return
     @classmethod
-    def info(cls):
-        print(cls.college)
-    
+    def school_name(cls):
+        print(f"School is {cls.school}")
+
     @staticmethod
-    def attension():
-        print('every body get ready for assembly')
+    def assembly():
+        print("Every Get Ready For Assembly")
 
 
-s1 = Students(10,40,45)
-s2 = Students(35,50,40)
-s1.maths = 35
-s1.avg()
-s2.avg()
-Students.info()
-Students.attension()
 
-# end types of methos
+s1 = Student("Abu",12,13,14)
+print(s1.name,s1.biology,s1.maths,s1.physics,s1.school)
+s1.average_mark()
+s1.school_name()
+s1.assembly()
+Student.school_name()
+Student.assembly()
 
-# inner class starts
-class Students:
-    def __init__(self,name,age):
+# end types of methods
+
+# inner class
+
+class Student:
+    def __init__(self,name,model,ram,ssd):
         self.name = name
-        self.age = age
-        self.lap = self.Laptop()
+        self.lap = self.Laptop(model,ram,ssd)  # object defined inside of the outer class
     
-    def show(self):
-        print(self.name,self.age)
-        self.lap.show()
+    def student(self):
+        print(f"Student is {self.name}")
+        self.lap.system()
 
     class Laptop:
-        def __init__(self):
-            self.brand = 'Mac'
-            self.ram = 8 
-            self.cpu = 'i5'
+        def __init__(self,model,ram,ssd):
+            self.model = model
+            self.ram = ram
+            self.ssd = ssd
+        
+        def system(self):
+            print(f"system is {self.model}-{self.ram}-{self.ssd}")
 
-        def show(self):
-            print(self.brand,self.ram,self.cpu)   
 
 
-s1 = Students('sabeel',22)
-s2 = Students('anshida',20)
+s1 = Student("Abu","Mac",512,8)
+print(s1.name)
+s1.student()
 
-s1.show()
-s2.show()
+# object is defined outside of the outer class
+l1 = s1.Laptop("Windows",16,1)
+l1.system()
 
-# inner class ends
+# end inner class
 
 
 # destructor
+
 class Myclass:
     def __init__(self):
        print('started')
@@ -93,7 +114,8 @@ class Myclass:
 
 obj = Myclass()
 obj.Name()
-# end
+
+# end destructor
         
 
         

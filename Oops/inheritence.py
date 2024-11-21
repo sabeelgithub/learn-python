@@ -1,18 +1,16 @@
 # single inheritence
+
 class A:
     def feature1(self):
-        print("fea 1 is working")
-
-a1 = A()
-a1.feature1()
+        print("feature 01 working")
 
 class B(A):
     def feature2(self):
-        print("fea 2 is working")
+        print("feature 02 working")
 
-b1 = B()
-b1.feature1()
-b1.feature2()
+b = B()
+b.feature1()
+b.feature2()
 
 #  end single inheritence
 
@@ -20,86 +18,84 @@ b1.feature2()
       
 class A:
     def feature1(self):
-        print("fea 1 is working")
-
-a1 = A()
-a1.feature1()
+        print("feature 01 working")
 
 class B(A):
     def feature2(self):
-        print("fea 2 is working")
-
-b1 = B()
-b1.feature1()
-b1.feature2()
+        print("feature 02 working")
 
 class C(B):
     def feature3(self):
-        print('fea 3 is working')
+        print("feature 03 working")
 
-c1 = C()
-c1.feature1()
-c1.feature2()
-c1.feature3()    
+c = C()
+c.feature1()
+c.feature2()
+c.feature3()
+ 
 
 #  end multilevel inheritence  
 
 
+# multiple inheritance
+# eg 1
+
 class A:
     def feature1(self):
-        print("fea 1 is working")
+        print("feature 01 working")
 
-a1 = A()
-a1.feature1()
-
-class B:
+class B():
     def feature2(self):
-        print("fea 2 is working")
-
-b1 = B()
-b1.feature2()
+        print("feature 02 working")
 
 class C(A,B):
     def feature3(self):
-        print('fea 3 is working')
+        print("feature 03 working")
 
-c1 = C()
-c1.feature1()
-c1.feature2()
-c1.feature3()
+c = C()
+c.feature1()
+c.feature2()
+c.feature3()
 
-# end multiple inheritence
 
+# eg 2
 
 class A:
     def __init__(self):
-        print('in init A')
+        print("in A")
+
     def feature1(self):
-        print("fea 1 is working")
+        print("feature 01 working")
+    
+    def feature(self):
+        print("featue A working")
+
+class B():
+    def __init__(self):
+        print("in B")
 
     def feature2(self):
-        print("fea 2-A is working")   
-
-class B:
+        print("feature 02 working")
     
-    def __init__(self):
-        print('in init B')
-        
+    def feature(self):
+        print("feature B working")
 
-    def feature2(self):
-        print("fea 2-B is working")
-    
-    def feature3(self):
-        print("fea 3 is working") 
-
-class C(A,B):
+class C(B,A):
     def __init__(self):
-        print('in int c')
+        print("in C")
         super().__init__()
 
-    def fea(self):
-        super().feature2()
-        
+    def feature3(self):
+        print("feature 03 working")
 
-obj = C()
-obj.fea()
+    def feature(self):
+        return super().feature()
+
+c = C()
+c.feature1()
+c.feature2()
+c.feature3()
+c.feature()
+
+
+# end multiple inheritence
