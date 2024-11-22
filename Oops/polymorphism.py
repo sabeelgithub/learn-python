@@ -1,24 +1,27 @@
  # duck typing 
 
-class VScode:
-    def exicute(self):
-        print('cheking')
-        print('reading')
-        print('combiling')
-        print('running')
+class Dog:
+    def speak(self):
+        print("Bow Bow")
 
-class Laptop:
-    def code(self,IDE):
-        IDE.exicute()
+class Cat:
+    def speak(self):
+        print("Meow Meow")
+
+def animal_sound(animal):
+    animal.speak()
 
 
-IDE = VScode()
-obj = Laptop()
-obj.code(IDE)
+dog = Dog()
+cat = Cat()
+
+animal_sound(dog)
+animal_sound(cat)
 
 #  end duck typing
 
-# method over riding
+# method overriding
+
 class A:
     def show(self):
         print('in show A')
@@ -30,62 +33,48 @@ class B(A):
                 
 obj = B()
 obj.show()
-# end
 
-# duck typing
+# method overriding end
 
+# method overloading
 
+class MathOperations:
+    def add(self,*args):
+        total = 0
+        for value in args:
+            total += value
+        return print(total)
 
-class Animal:
-    def perform(self):
-        print('behave like animal')
+m = MathOperations()
+m.add(5,2,3)
 
-class Human:
-    def perform(self):
-        print('humam is behaving')
-
-class Circus:
-    def play(self,animal:Animal):
-        animal.perform()
-        # print(f'some one behaving')
-
-
-a = Animal()
-b = Human()
-c = Circus()
-c.play(b)
-
-# end
-
+# method overloading end
 
 # operator overloading
 
-class A:
-    def __init__(self,name,place):
-        self.name = name
-        self.place = place
-    def __add__(self,b):
-        print(self.name+' '+b.name)
+class Maths:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
 
-a = A('sabeel','ovr')
-b = A('ann','thani')
-a + b   
+    def __add__(self,other):
+        return print(self.x+other.x)
+    
+    def __sub__(self,other):
+        return print(self.y-other.y)
+    
+    def __mul__(self,other):
+        return print(self.x*other.x)
+    
 
-# end
+m1 = Maths(1,2)
+m2 = Maths(3,4)
 
-# method overloading
-class C:
-    # def sum(self,a,b):
-    #     print(a+b)
-    def sum(self,*args):
-        total = 0
-        for i in args:
-            total += i
-        print(total)
+m1+m2
+m1-m2
+m1*m2
 
-c = C()
-c.sum(1,2,6,6,89)
+# operator overloading end
 
-# end
         
         
