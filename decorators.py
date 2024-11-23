@@ -37,6 +37,7 @@ def time_calculataion(func):
         print(f"Time taken by {func.__name__} is {end_time - star_time}")
         return result
     return wrapper
+
 @time_calculataion
 def sleep_check():
     time.sleep(5)
