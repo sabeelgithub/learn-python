@@ -27,4 +27,22 @@ t2.join()
 print(current_thread())
 print('end')
 
+
+
+def start_counting():
+    for i in range(1,11):
+        print(i)
+        sleep(1)
+
+def remain_counting():
+    for i in range(90,101):
+        print(i)
+        sleep(1)
+
+
+t1 = Thread(target=start_counting)
+t2 = Thread(target=remain_counting)
+t1.start()
+t2.start()
+
 # multi threading end
