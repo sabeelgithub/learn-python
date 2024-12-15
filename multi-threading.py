@@ -1,6 +1,7 @@
 # multi threading
 from time import sleep
 from threading import *
+
 class Hello(Thread):
     def run(self):
         for i in range(10):
