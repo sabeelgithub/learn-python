@@ -98,4 +98,107 @@ if bi == -1:
 else:
     print(f"{target} is found in {bi} position")
 
+
+"""
+Q-Given two numbers  and .  indicates the number of elements in the array  and  indicates number of queries. You need to perform two types of queries on the array .
+
+You are given  queries. Queries can be of two types, type 1 and type 2.
+
+Type 1 queries are represented as 1 i j : Modify the given array by removing elements from  to  and adding them to the front.
+
+Type 2 queries are represented as 2 i j : Modify the given array by removing elements from  to  and adding them to the back.
+
+Your task is to simply print  of the resulting array after the execution of  queries followed by the resulting array.
+
+Note While adding at back or front the order of elements is preserved.
+
+Input Format
+
+First line consists of two space-separated integers,  and .
+Second line contains  integers, which represent the elements of the array.
+ queries follow. Each line contains a query of either type 1 or type 2 in the form 
+
+Constraints
+
+
+
+Output Format
+
+Print the absolute value i.e.  in the first line.
+Print elements of the resulting array in the second line. Each element should be seperated by a single space.
+
+Sample Input
+
+8 4
+1 2 3 4 5 6 7 8
+1 2 4
+2 3 5
+1 4 7
+2 1 4
+Sample Output
+
+1
+2 3 6 5 7 8 4 1
+
+"""
+
+# ans-1
+from typing import List
+
+def looping(sl_arr,arr):
+    for i in sl_arr:
+        arr.remove(i)
+    return arr
+
+def execution(N:int,M:int,arr:List[int],queries:List[str]):
+   
+    for query in queries:
+        if query[0] == '1':
+            sl_arr = arr[int(query[1])-1:int(query[2])]
+            arr = looping(sl_arr,arr)
+            arr = sl_arr + arr
+        elif query[0] == '2':
+            sl_arr = arr[int(query[1])-1:int(query[2])]
+            arr = looping(sl_arr,arr)
+            arr = arr + sl_arr
+            
+    diff = arr[0]-arr[len(arr)-1]
+    diff = abs(diff)
+    return diff,arr
+    
+diff,final_arr = execution(8,4,[1,2,3,4,5,6,7,8],['124','235','147','214'])
+print(diff)
+for i in final_arr:
+    print(i,end=" ")
+            
+# ans-2
+
+n = int(input("Enter length of array:"))
+arr = [i for i in range(1,n+1)]
+print(f"Your array is : {arr}")
+m = int(input("Enter number of queries:"))
+queries = []
+for i in range(1,m+1):
+    query = input(f"Enter query {i}:")
+    queries.append(query)
+
+print(f"Your queries are : {queries}")
+
+def execution(arr,queries):
+    for query in queries:
+        query_type,i,j = query
+        query_type,i,j = int(query_type),int(i),int(j)
+        i -= 1
+        j -= 1
+
+        if query_type == 1:
+            arr = arr[i:j+1] + arr[:i] + arr[j+1:]
+        elif query_type == 2:
+            arr = arr[:i] + arr[j+1:] + arr[i:j+1]
+        
+    print(abs(arr[0] - arr[-1]))
+    print(" ".join(map(str,arr)))
+
+execution(arr,queries)
+
         
