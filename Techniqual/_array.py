@@ -201,4 +201,109 @@ def execution(arr,queries):
 
 execution(arr,queries)
 
+
+# accessing
+from array import array
+
+
+arr1 = array('i',[1,2,3,4,5,6])
+
+"""
+Q - access value in a specified index
+"""
+def accessElement(arr,index):
+    if index >= len(arr):
+        print("out of index")
+    else:
+        print(arr[index])
+
+accessElement(arr1,9)
+
+
+print("choices are,1 for int array,2 for float array")
+
+try:
+    choice = int(input('Enter choice you want:'))
+
+    if choice == 1:
+        length = int(input("Enter the length of array you want:"))
+        arr = array('i',[])
+        for i in range(length):
+            num = int(input(f"Enter number {i+1}:"))
+            arr.append(num)
+
+    elif choice == 2:
+        length = int(input("Enter the length of array you want:"))
+        arr = array('d',[])
+        for i in range(length):
+            num = int(input(f"Enter number {i+1}:"))
+            arr.append(num)
+    
+    print(arr)
+except Exception as e:
+    print(e)
+
+"""
+Q-search value
+"""
+def search_array_value(array,value):
+    for idx,x in enumerate(array):
+        if x == value:
+            print(f"item found at {idx+1} position")
+            break
+    else:
+        print("item not found")
+
+
+search_array_value(arr1,101)
+
+
+"""
+Q - Find all paires in which thieir sum is 10
+"""
+arrk = array('i',[1,2,3,4,5,6,7,9])
+
+values = []
+for i in range(len(arrk)-1):
+    for j in range(i+1,len(arrk)):
+        if arrk[i] + arrk[j] == 10:
+            values.append((arrk[i],arrk[j]))
+
+if len(values) == 0:
+    print("no such paries")
+else:
+    for i in values:
+        print(i,',',end='')
+
+"""
+Q - Find first paires in which their sum is 10
+"""
+arrk = array('i',[1,2,3,4,5,6,7,9])
+found = False
+for i in range(len(arrk)-1):
+    for j in range(i+1,len(arrk)):
+        if arrk[i] + arrk[j] == 10:
+            found = True
+            print(f"Paires are {arrk[i]} and {arrk[j]}")
+            break
+    if found:
+        break
+
+
+if not found:
+    print("paries not found")
+
+
+"""
+Q - reverse array
+"""
+arr = [1,4,5,7,3,2,5]
+
+def reverese_array1(arr):
+    for i in range(len(arr)//2):
+        arr[i],arr[len(arr)-i-1] = arr[len(arr)-i-1],arr[i]
+    return print(arr)
+
+reverese_array1(arr)
+
         
